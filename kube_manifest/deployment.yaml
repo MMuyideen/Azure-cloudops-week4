@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deenk8s-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deenk8s-webapp
+  template:
+    metadata:
+      labels:
+        app: deenk8s-webapp
+    spec:
+      containers:
+      - name: deenk8s-webapp
+        image: deen/deenk8s-webapp:latest
+        ports:
+        - containerPort: 5000
