@@ -23,7 +23,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ env.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:${GITHUB_SHA::8} .
+        docker build -t ${{ env.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:${GITHUB_SHA::8} ../APP/ .
         docker push ${{ env.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:${GITHUB_SHA::8}
 
     - name: Update Kubernetes manifest
