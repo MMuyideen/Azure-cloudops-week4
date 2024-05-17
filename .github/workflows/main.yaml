@@ -30,13 +30,13 @@ jobs:
     - name: Update Kubernetes manifest
       run: |
         IMAGE_TAG=${GITHUB_SHA::8}
-        sed -i "s|image: .*|image: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:$IMAGE_TAG|" kubernetes/deployment.yaml
+        sed -i "s|image: .*|image: ${{ env.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:$IMAGE_TAG|" kube_manifest/deployment.yaml
 
     - name: Commit and push manifest changes
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'github-actions@github.com'
-        git add kubernetes/deployment.yaml
+        git add kube_manifest/deployment.yaml
         git commit -m "Update image tag in deployment.yaml"
         git push
 
