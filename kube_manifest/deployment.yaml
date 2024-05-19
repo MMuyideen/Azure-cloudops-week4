@@ -16,4 +16,4 @@ spec:
       - name: deenk8s-webapp
         image: fullbloodprince/deenk8s-webapp:4e3a5eb2
         ports:
-        - containerPort: 80
+        - containerPort: 5000
