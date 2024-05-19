@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: deenk8s-webapp
-        image: fullbloodprince/deenk8s-webapp
+        image: fullbloodprince/deenk8s-webapp:74a2a649
         ports:
         - containerPort: 5000
